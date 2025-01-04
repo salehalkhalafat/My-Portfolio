@@ -487,17 +487,14 @@ body {
     .profile-description-container {
         flex-direction: column;
         align-items: center;
-        font-size: smaller;
     }
     .profile-picture-wrapper {
         position: relative;
         width: 100px;
         height: 100px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%; /* Circular container for the glow */
-        animation: glow-animation 3s ease-in-out infinite alternate;
+
+
     }
     #profile-name {
         font-size: 1.2rem;
@@ -512,8 +509,8 @@ body {
         line-height: 1.3;
     }
     .description-column {
-        width: 120%;
-        padding-right: 20px;
+        padding-left: 0px;
+        width: 100%;
         text-align: center;
     }
     .skills-container {
