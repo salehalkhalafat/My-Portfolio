@@ -498,7 +498,7 @@ body {
     height: 65px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     /* Adjust profile picture and text layout for mobile */
     .profile-description-container {
         flex-direction: column;
