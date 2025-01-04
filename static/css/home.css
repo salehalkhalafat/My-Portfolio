@@ -593,22 +593,6 @@ body {
         font-size: 0.6rem;
     }
     .certificate-link {
-        display: inline-block;
-        color: #c9fdff;
-        border: none;
-        border-radius: 5px;
-        text-decoration: none;
         font-size: .5rem;
-        font-weight: bold;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        justify-content: flex-end;
-
-    }
-    .certificate-link:hover{
-        background-color: #025f5b;
-        color: #ffffff;
-        transform: scale(1.05); /* Slightly enlarge the button on hover */
-        transition: transform 0.3s ease;
     }
 }
