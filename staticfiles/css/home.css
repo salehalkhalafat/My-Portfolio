@@ -497,3 +497,63 @@ body {
     width: 65px;
     height: 65px;
 }
+
+@media (max-width: 768px) {
+    /* Adjust profile picture and text layout for mobile */
+    .profile-description-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-column, .description-column {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .profile-picture-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .section-content h2 {
+        font-size: 1.8rem; /* Reduce size of headers */
+    }
+
+    .section {
+        padding: 1rem;
+    }
+
+    .contact-container {
+        padding-right: 0;
+    }
+
+    .form-container {
+        width: 90%; /* Make form container full-width */
+    }
+
+    .progress-container {
+        width: 100%; /* Adjust progress bar width */
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .certificate-deck, .project-deck, .education-deck {
+        flex-direction: column;
+    }
+
+    .certificate-card, .project-card, .education-card {
+        width: 100%;
+        height: auto; /* Allow cards to adapt to the screen width */
+    }
+
+    .certificate-link, .project-link {
+        width: 100%; /* Make buttons full-width */
+    }
+
+    .contact-icons img {
+        width: 50px;
+        height: 50px;
+    }
+}
