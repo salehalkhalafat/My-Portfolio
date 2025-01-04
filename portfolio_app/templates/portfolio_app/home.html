@@ -1,0 +1,147 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+{%load static%}
+<div class="section-container">
+    <section class="section" id="profile">
+        <div class="profile-description-container">
+            <!-- Left Column: Profile (Picture, Name, Bio) -->
+            <div class="profile-column">
+                <div class="profile-picture-wrapper">
+                    <img src="{{ profile.picture.url }}" alt="Profile Picture of {{ profile.name }}"
+                        class="section-image">
+                </div>
+                <div class="text-container">
+                    <h1 id="profile-name" class="typing-animation">{{ profile.name }}</h1>
+                    <h2 id="profile-bio" class="typing-animation">{{ profile.bio }}</h2>
+                </div>
+            </div>
+            <!-- Right Column: Description -->
+            <div class="description-column">
+                <div class="description-container">
+                    <p>{{ profile.brief_description }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="section-content">
+            <h2>Education</h2>
+            <div class="education-deck">
+                {% for education in educations %}
+                <div class="education-card" style="background-image: url('{{ education.Picture.url }}');">
+
+                    <div class="education-details">
+                        <h3>{{ education.Degree }}</h3>
+                        <p>{{ education.Institute }}</p>
+                        {% if education.Graduation_year %}
+                        <p>{{education.Start_year}} - {{ education.Graduation_year }}</p>
+                        {% else %}
+                        <p><strong>{{education.Start_year}} - Present</strong></p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="section-content">
+            <h2>Skills</h2>
+            <div class="column">
+                <div class="skills-container">
+                    {% for skill in skills %}
+                    <div class="progress-container">
+                        <label>{{ skill.name }}</label>
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner" style="width: {{ skill.proficiency }}%;"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="section" id="certificates">
+        <div class="section-content">
+            <h2>My Certificates</h2>
+            <div class="certificate-deck">
+                {% for certificate in certificates %}
+                <div class="certificate-card" style="background-image: url('{{ certificate.Picture.url }}');">
+                    <div class="certificate-details">
+                        <h3>{{ certificate.title }}</h3>
+                        <p>{{ certificate.issued_by }}</p>
+                        <p>{{ certificate.issue_date }}</p>
+                        {% if certificate.certificate_link %}
+                        <a href="{{ certificate.certificate_link }}" target="_blank" class="certificate-link">View
+                            Certificate</a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="section-content">
+            <h2>Projects</h2>
+            <div class="project-deck">
+                {% for project in projects %}
+                <div class="project-card" style="background-image: url('{{ project.Picture.url }}');">
+                    <div class="project-details">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                        {% if project.project_link %}
+                        <a href="{{ project.project_link }}" target="_blank" class="project-link">View Project</a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="contact-container">
+            <ul class="contact-icons">
+                <a href="{{ contact.GitHub }}"><img src="{% static 'Logos/icons8-github.svg' %}" alt="GitHub"></a>
+                <a href="{{ contact.LinkedIn }}"><img src="{% static 'Logos/icons8-linkedin.svg' %}" alt="LinkedIn"></a>
+                <a href="{{ contact.Email }}"><img src="{% static 'Logos/icons8-gmail.svg' %}" alt="Email"></a>
+            </ul>
+        </div>
+        <div class="form-container">
+            <form method="post" action="{% url 'home' %}">
+                {% csrf_token %}
+                <div>
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div>
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div>
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+</div>
+
+{% endblock %}
