@@ -46,14 +46,14 @@
     .navbar {
         background-color: rgba(1, 30, 32, 0.39); /* Slightly transparent background */
     }
-    .navbar-brand img {
-        width: 80px; /* Reduced logo size on mobile */
-    }
+
     .navbar-brand span {
-        display: none; /* Hide the text part on mobile */
+        display: none;
     }
     .navbar-nav .nav-link {
-        margin-top: 10px;
-        font-size: 0.9rem;
+        margin-top: 20px;
+        margin-left: 10px;
+        font-size: 1rem;
     }
 }
+
