@@ -101,7 +101,7 @@
                         <h3>{{ project.title }}</h3>
                         <p>{{ project.description }}</p>
                         {% if project.project_link %}
-                        <a href="{{ project.project_link }}" target="_blank" class="project-link">View Project</a>
+                        <a href="{{ project.project_link }}" target="_blank" class="project-link">View</a>
                         {% endif %}
                     </div>
                 </div>
@@ -112,34 +112,38 @@
 
     <!-- Contact Section -->
     <section class="section" id="contact">
-        <div class"contact-form-container">
-            <div class="contact-container">
-                <ul class="contact-icons">
-                    <a href="{{ contact.GitHub }}"><img src="{% static 'Logos/icons8-github.svg' %}" alt="GitHub"></a>
-                    <a href="{{ contact.LinkedIn }}"><img src="{% static 'Logos/icons8-linkedin.svg' %}" alt="LinkedIn"></a>
-                    <a href="mailto:{{ contact.Email }}"><img src="{% static 'Logos/icons8-gmail.svg' %}" alt="Email"></a>
-                </ul>
-            </div>
-            <div class="form-container">
-                <form method="post" action="{% url 'home' %}">
-                    {% csrf_token %}
-                    <div>
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
-                    <div>
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email">
-                    </div>
-                    <div>
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="4"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </div>
-                </form>
+        <div class="section-content">
+            <h2>Contact Me</h2>
 
+            <div class="contact-form-container">
+                <div class="contact-container">
+                    <ul class="contact-icons">
+                        <a href="{{ contact.GitHub }}"><img src="{% static 'Logos/icons8-github.svg' %}" alt="GitHub"></a>
+                        <a href="{{ contact.LinkedIn }}"><img src="{% static 'Logos/icons8-linkedin.svg' %}" alt="LinkedIn"></a>
+                        <a href="mailto:{{ contact.Email }}"><img src="{% static 'Logos/icons8-gmail.svg' %}" alt="Email"></a>
+                    </ul>
+                    <a href="{{ contact.CV.url }}" target="_blank" class="cv-link">Download CV</a>
+                </div>
+                <div class="form-container">
+                    <form method="post" action="{% url 'home' %}">
+                        {% csrf_token %}
+                        <div>
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div>
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>

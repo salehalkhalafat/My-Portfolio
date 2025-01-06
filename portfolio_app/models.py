@@ -54,6 +54,8 @@ class Contact(models.Model):
     Whatsapp = models.URLField(blank=True, null=True)
     PHONE = models.IntegerField(blank=True, null=True)
     Email = models.EmailField()
+    CV = models.FileField(upload_to='files/', blank=True, null=True)
+
 
     def __str__(self):
         return f"Contact information for {Profile.name}"

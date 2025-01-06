@@ -49,4 +49,4 @@ def home(request):
         'skills': skills,
         'certificates': certificates,
         'contact': contact
-    })
+        })
