@@ -53,6 +53,8 @@ class Contact(models.Model):
     LinkedIn = models.URLField(blank=True, null=True)
     Whatsapp = models.URLField(blank=True, null=True)
     PHONE = models.IntegerField(blank=True, null=True)
+    X = models.URLField(blank=True, null=True)
+    Instagram = models.URLField(blank=True, null=True)
     Email = models.EmailField()
     CV = models.FileField(upload_to='files/', blank=True, null=True)
 
