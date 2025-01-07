@@ -1,4 +1,11 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "portfolio/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
   "headers": [
     {
       "source": "/static/(.*)",
