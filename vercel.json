@@ -6,15 +6,11 @@
       "use": "@vercel/python"
     }
   ],
-  "headers": [
+
+  "routes": [
     {
-      "source": "/static/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "max-age=0, must-revalidate"
-        }
-      ]
+      "src": "/(.*)",
+      "dest": "portfolio/wsgi.py"
     }
   ]
 }
